@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Letter — Cobra Kai & The Karate Kid Franchise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1510;
+      --ink-soft: #3d3530;
+      --ink-muted: #7a6e66;
+      --paper: #f5f0e8;
+      --paper-warm: #ede7d9;
+      --rule: #c8bfb0;
+      --accent: #8b2020;
+      --accent-light: #c04040;
+      --gold: #b8952a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background-color: var(--ink);
+      color: var(--paper);
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(255,255,255,0.03) 39px,
+        rgba(255,255,255,0.03) 40px
+      );
+      pointer-events: none;
+    }
+
+    .header-eyebrow {
+      font-family: 'Source Serif 4', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.9rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--paper);
+      max-width: 800px;
+      margin: 0 auto 1rem;
+    }
+
+    header h1 em {
+      font-style: italic;
+      color: #d4c4b0;
+    }
+
+    .header-sub {
+      font-size: 0.9rem;
+      color: #a09080;
+      letter-spacing: 0.05em;
+    }
+
+    .header-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 1.5rem auto 0;
+    }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── ADDRESSEE ── */
+    .addressee {
+      margin: 3.5rem 0 0;
+      padding: 2rem 2.5rem;
+      background: var(--paper-warm);
+      border-left: 3px solid var(--accent);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    /* ── LETTER BODY ── */
+    .letter-body {
+      padding: 2.5rem 0 1rem;
+    }
+
+    .letter-body p {
+      margin-bottom: 1.4rem;
+      color: var(--ink-soft);
+    }
+
+    .letter-body ul {
+      margin: 1rem 0 1.8rem 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .letter-body ul li {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-bottom: 0.6rem;
+      color: var(--ink-soft);
+      font-size: 0.97rem;
+    }
+
+    .letter-body ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    blockquote {
+      margin: 2rem 0;
+      padding: 1.2rem 1.8rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(184, 149, 42, 0.06);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+    }
+
+    .signoff {
+      margin: 2.5rem 0 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .signoff p {
+      margin-bottom: 0.3rem;
+      font-style: italic;
+      color: var(--ink-muted);
+    }
+
+    .signoff strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 1.05rem;
+    }
+
+    /* ── SECTION DIVIDER ── */
+    .section-intro {
+      margin: 0 0 1.5rem;
+      padding: 2rem 0 1rem;
+      border-top: 2px solid var(--ink);
+    }
+
+    .section-intro p {
+      font-size: 1rem;
+      color: var(--ink-muted);
+      font-style: italic;
+    }
+
+    /* ── ACCORDION ── */
+    .explanations-label {
+      font-family: 'Source Serif 4', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 1rem;
+    }
+
+    .accordion {
+      margin-bottom: 4rem;
+    }
+
+    .accordion-item {
+      border-top: 1px solid var(--rule);
+    }
+
+    .accordion-item:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 1.3rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .accordion-trigger:hover .trigger-title {
+      color: var(--accent-light);
+    }
+
+    .trigger-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.35;
+      transition: color 0.2s;
+    }
+
+    .trigger-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      margin-top: 2px;
+      color: var(--accent);
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-item.open .trigger-icon {
+      transform: rotate(45deg);
+    }
+
+    .accordion-panel {
+      display: none;
+      padding: 0 0 1.8rem;
+    }
+
+    .accordion-item.open .accordion-panel {
+      display: block;
+    }
+
+    .accordion-panel p {
+      color: var(--ink-soft);
+      margin-bottom: 1.2rem;
+      font-size: 0.97rem;
+    }
+
+    .accordion-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .accordion-panel ul {
+      margin: 0.8rem 0 1.2rem;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .accordion-panel ul li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.55rem;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
+
+    .accordion-panel ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .accordion-panel blockquote {
+      font-size: 0.95rem;
+      margin: 1.2rem 0;
+    }
+
+    .fan-note {
+      background: var(--paper-warm);
+      border-left: 3px solid var(--gold);
+      padding: 1.4rem 1.6rem;
+      margin: 1.2rem 0;
+      font-style: italic;
+      font-size: 0.93rem;
+      color: var(--ink-soft);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: #9a8e84;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    .footer-channel {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--paper);
+      margin-bottom: 0.4rem;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    header h1, .header-eyebrow, .header-sub {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .header-eyebrow { animation-delay: 0.1s; }
+    header h1       { animation-delay: 0.25s; }
+    .header-sub     { animation-delay: 0.4s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      .addressee { padding: 1.4rem 1.5rem; }
+      .trigger-title { font-size: 0.97rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <p class="header-eyebrow">An Open Letter from Concerned Fans</p>
+  <h1>On the Harmful Messages of <em>Cobra Kai</em><br>and The Karate Kid Franchise</h1>
+  <p class="header-sub">Addressed to the Producers of Cobra Kai &amp; Executives at Overbrook Entertainment, Sony Pictures Television, and Netflix</p>
+  <div class="header-rule"></div>
+</header>
+
+<div class="page-wrap">
+
+  <div class="addressee">
+    To the Executive Producers and Producers of Cobra Kai, and the Executives at Overbrook Entertainment, Sony Pictures Television, and Netflix:
+  </div>
+
+  <div class="letter-body">
+
+    <p>We are writing this letter in regard to the messages of the Cobra Kai series and the new legacy of The Karate Kid franchise.</p>
+
+    <p>The series has alienated many fans of the franchise. We are disheartened by not only the story resolutions but also the depiction and handling of sensitive topics throughout the series. We support the messages of the original Karate Kid movies. We do not support the messages of the Cobra Kai series. The series does the following:</p>
+
+    <ul>
+      <li>Promotes child abandonment, neglect, replacement, and abuse</li>
+      <li>Promotes that parents who fail their children should build new families and gain material wins at the expense of their children</li>
+      <li>Frames unhealthy (codependent and/or abusive) relationships as wholesome</li>
+      <li>Frames abuse (such as emotional, psychological, and physical) as either acceptable or situationally downplays the impact</li>
+      <li>Frames abusers and bullies as sympathetic because they are hurt people who hurt other people</li>
+      <li>Frames trauma victims and cycle breakers who stand up for themselves and fight back, especially when they have trauma responses, as antagonistic</li>
+      <li>Promotes that children should people-please and "adapt" in abusive family situations</li>
+      <li>Frames abusers and bullies who avoid accountability as sympathetic heroes; frames and scapegoats their victims as completely or equally at fault when they are not, and frames the victims as being less deserving/in need of wins</li>
+      <li>Promotes that contrived material wins magically fix one's life, heal one's traumas, or redeem those who don't take accountability or make amends to those they have wronged</li>
+      <li>Promotes continuing cycles of trauma instead of breaking them</li>
+      <li>Promotes emotional immaturity and enabling of neglect, abuse, and alcoholism</li>
+      <li>Minimizes childhood trauma from abandonment, neglect, replacement, scapegoating, and abuse</li>
+      <li>Minimizes the impacts of alcoholism on a person and their family</li>
+      <li>Minimizes sexual assault</li>
+    </ul>
+
+    <p>Such harmful messages counter the efforts of many in society who spread healthy understandings about mental health, trauma, unhealthy relationships, sexual assault, and trauma healing.</p>
+
+    <p>We're disheartened to see the original messages of the franchise be replaced with these harmful messages. Throughout the series, but especially in Season 6 Part 3, the Miyagi-Do legacy and characters were torn down to prop up and establish the Cobra Kai legacy and characters. The series also demeaned Mr. Miyagi and Daniel's healthy father-son relationship from the original movies, while promoting Johnny and Miguel's unhealthy "father-son" relationship that is built on the neglect and abuse of Robby.</p>
+
+    <p>Also, self-actualization is a key aspect of an underdog story, which The Karate Kid franchise used to promote but no longer does. Self-actualization is also important for trauma healing. The franchise now promotes that trauma survivors should not self-actualize but should stop fighting for themselves and should selflessly support their abusers and bullies, that they should settle for unhealthy relationships and the belief that they should stop trying for wins. These are harmful messages to send to and about trauma victims and cycle breakers.</p>
+
+    <blockquote>
+      "Win, lose, no matter. You make good fight, earn respect. Then nobody bother." — Mr. Miyagi
+    </blockquote>
+
+    <p>This is an important lesson that one needs in life, including in unhealthy relationships. Daniel was right to continue his fight and self-actualize in the climax of The Karate Kid. In turn, Robby and Sam should have also continued their fights and self-actualized in Season 6 Part 3. They are both important representations of teens who have experienced traumas due to abusers and bullies. They should have not only finished their final fights, but also stood up for themselves and stood firm against their abusers and bullies. In Robby's case, these were primarily Johnny and Miguel. In Sam's case, these were primarily Miguel and Tory. The framing that makes Johnny, Miguel, and Tory seem sympathetic, justified, and entitled to wins, as well as the framing that vilifies Daniel, Robby, and Sam and minimizes their traumas play a significant role in the harmful messages. The series demeans trauma survivors instead of promoting empathy and understanding towards them.</p>
+
+    <p>Please find below explanations of our concerns based on details from the series.</p>
+
+    <p>We sincerely request that you make a follow-up story that focuses on these Miyagi-Do characters and addresses the issues highlighted in this letter. We are not simply requesting that these characters, the dojo, or what they represent be given "wins". We are requesting that the harmful messages of the series be addressed and rectified using the same medium and characters with which these messages were spread.</p>
+
+    <p>Many of us still value the original movies, their healthy messages, and Mr. Miyagi and Daniel's healthy father-son relationship. We hope to see genuinely wholesome and healthy conclusions and messages for these Miyagi-Do characters and their stories so that future generations can also value the franchise for what it was originally meant to represent.</p>
+
+    <div class="signoff">
+      <p>Sincerely,</p>
+      <strong>Concerned fans of The Karate Kid franchise</strong>
+    </div>
+
+  </div><!-- /letter-body -->
+
+  <!-- EXPLANATIONS -->
+  <div class="section-intro">
+    <p class="explanations-label">Detailed Explanations</p>
+    <p>The following sections expand on specific concerns raised in the letter above. Click any section to read more.</p>
+  </div>
+
+  <div class="accordion">
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">Miyagi-Do was villainized and belittled to frame Cobra Kai as redeemed heroes</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>Miyagi-Do promotes respecting others, supporting trauma victims, and healing past traumas. Cobra Kai promotes bullying, inflicting trauma, and perpetuating abuse. Miyagi-Do represents honor, discipline, dedication, humility, character, balance, and defending oneself and others — all traits that are useful and needed for life. Cobra Kai was and continues to be the antithesis of Miyagi-Do. The Miyagi-Do legacy and characters were undermined to establish the Cobra Kai legacy and characters.</p>
+        <p>One event that set the groundwork for this is the school fight in Season 2. This fight was started by almost all the Cobra Kais striking first against their respective counterparts. However, the ending of the school fight was used as a free pass throughout to absolve the former, especially Johnny and Miguel, and to shift all the blame onto Robby specifically. Daniel not fighting to defend Miyagi-Do and Robby's side of the story in Season 3 falls in line with the message that Miyagi-Dos should give up the fight.</p>
+        <p>In Season 6, Mr. Miyagi was given a backstory that sullied his past so that Daniel would have doubts in him. This was done to "humanize" Mr. Miyagi, despite his character already being humanized in the original films. The backstory was not resolved properly, and Mr. Miyagi's legacy is now tainted — left with the titles of "liar," "thief," and potential killer. One of his most meaningful teachings was also ignored. Both were done to ultimately serve Johnny's false redemption, as all the adults — especially Daniel — rallied around and enabled Johnny as he chose to continue Cobra Kai.</p>
+        <p>Another representation of Miyagi-Do being demeaned is how the Miyagi-Do headband was used. It was given to Miguel, and not any of the teens who are closely tied to the Miyagi-Do legacy. This was done to cause Johnny jealousy. In contrast, Miguel received Johnny's headband as a pivotal motivational moment in his final fight with Axel. The contrast in how the headbands were used shows a lack of respect for the Miyagi-Do legacy.</p>
+        <p>The Miyagi-Dos giving up their fights in Part 3 was more than about karate. It was also about giving up standing up for themselves in their relationships with the Cobra Kais. Daniel, Sam, and Robby fully supported Cobra Kai after they gave up their fights — they backed Cobra Kai, donned Cobra Kai gis, and spouted Cobra Kai's harmful teachings. Miyagi-Do yielded to its opposite and chose "passion over principle."</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">Daniel &amp; Johnny: Daniel's trauma was used to frame him as antagonistic while Johnny's was used to frame him as sympathetic; Daniel's "growth" was to become Johnny's enabler</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>The series began with Johnny's point of view, so Daniel's negative reactions to Cobra Kai returning — due to his past trauma — were used to frame him as an unreasonable antagonist. Initially, this fit the gray nature of the series. However, as the series went on, instead of Daniel maturing while staying true to his Miyagi-Do roots, his behavior declined and was used to prop up or conform to Johnny's. Their friendship enabled Johnny and prevented him from growing as a person.</p>
+        <p>For example, in Season 4 Episode 8, Vanessa pointed out that Anthony's screen dependency was due to Daniel and Amanda neglecting him. Daniel later violently broke the tablet Anthony was secretly using and yelled at him. Amanda praised Daniel for this. This was never resolved in a healthy manner. The resulting message is that following Johnny's emotionally immature and abusive way is good parenting. It is not.</p>
+        <p>Amanda is considered the "voice of reason" by many, but she acted as an enabler throughout. She dismissed Daniel's legitimate concerns about the toxic dojo. She was supportive of Johnny's behavior while repeatedly trying to persuade Daniel to see Johnny's side. She dismissed Sam's fears about Tory returning to school. She dismissed Robby's situation and feelings. She wanted to hide Anthony from a family gathering after he was revealed as a bully.</p>
+        <p>In Season 5 Episode 5, Daniel's spiral led to him drinking. When Daniel came to talk to Johnny, Johnny — knowing Daniel was visibly drinking — handed him a beer and admitted he was done with Cobra Kai, which was a lie. Daniel also said that Johnny cared about both boys, which is objectively untrue — Miguel is always Johnny's priority compared to Robby.</p>
+        <p>By the end of the series, Daniel allowed Anthony to be a Cobra Kai, wrapped Cobra Kai gis around his kids, and was proud to do so. Daniel became Johnny's number one enabler. Daniel proudly told Silver that Cobra Kai never dies, encouraged Johnny with Kreese's teachings, and chanted Cobra Kai as he held the trophy with Johnny. Silver had won.</p>
+        <p>Daniel also failed Sam when she didn't want to fight in Part 3, and his failings with Robby were as bad, if not worse. Daniel praised Robby for "adapting" with Johnny and Miguel — but Robby shouldn't have had to "adapt" in the first place. The message that a child should adapt in unhealthy relationships is extremely dangerous, especially for any children in the audience who are in similar family situations.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">Johnny's False Redemption — Part 1: Unhealthy family dynamics are promoted as healthy and wholesome</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>Throughout the series, Johnny is shown to neglect and abuse Robby to prioritize the Diazes, especially Miguel. Johnny has a codependent relationship with the Diazes. In Season 4, Johnny couldn't perform in bed because Miguel was spending time with Daniel — meanwhile, Johnny didn't care that Robby was being trained by Kreese and never made a genuine effort to keep Robby safe from him, as he had done for Miguel.</p>
+        <p>In Season 5, Johnny tricked Robby into a father-son trip with the ulterior motive of finding Miguel. After revealing the truth, Johnny guilted and gaslit him so that he would stay and help. Netflix Family framed this trip as wholesome with a post glamorizing Johnny hugging Miguel at the end, with Robby watching in the background — after all the psychological and emotional abuse Johnny had subjected Robby to on that trip.</p>
+        <p>The baby introduced in Season 5 was used in disturbing ways. After Johnny learned of Carmen's pregnancy, Shannon gave him and Robby the excuse that they were "young and dumb" — erasing the culpability they both have for the harm they've done to their son. The news of the baby was a turning point for Robby: he stopped speaking up for himself and became a people pleaser. Every time Johnny mentioned the baby, he talked about it as a chance to make up for screwing up with Robby — yet his abusive behavior only escalated.</p>
+        <p>This family, which was forced together by Johnny, is deeply unhealthy. Carmen enabled both Johnny and Miguel, never held Miguel accountable for his violent behavior, and shifted blame onto Robby. The unhealthiness is rounded out by Robby being the scapegoat, treated as a lower priority, left out of important family scenes.</p>
+        <p>The enabling of Johnny's alcoholism is also prominent. When Johnny announced Carmen's pregnancy in Season 5, they celebrated by going to a club and drinking copiously with him — an alcoholic becoming a father again. In Season 6, Johnny threw empty beer bottles at the teens during training — a disturbing moment, especially for Robby, who has two addict parents and avoids drinking himself. Johnny was later shown holding his baby in one arm while gripping a beer in the other.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">Johnny's False Redemption — Part 2: Johnny's lack of growth and continuing the cycle of trauma are celebrated</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>Johnny was given a cathartic scene to confront Kreese about hurting and abandoning him in '84, and Kreese took accountability and offered to make amends. After receiving this catharsis, Johnny chose to retake Cobra Kai and continue to pass down the trauma that he himself had once called a poison.</p>
+        <p>Robby was never given a truly cathartic scene to confront Johnny about abandoning him and subjecting him to various abuses, nor did Johnny ever show self-awareness and take accountability with his son. When Robby is allowed to express himself the same way Johnny did to Kreese, he is framed as unreasonable. To make matters worse, Robby's experience with mentoring Kenny was equated to Johnny abandoning Robby for over 17 years — minimizing the traumas Johnny had subjected his son to.</p>
+        <p>This was then used to have Robby "apologize" to his father for having trauma ("hate," "blame," etc.) due to Johnny's behavior. After this, Johnny's abuses towards his son escalated. Robby should have self-actualized in Part 3 and walked away from Johnny — but since the series caters to Johnny as the lead character, Robby was not allowed to do so.</p>
+        <p>The chant "Cobra Kai never dies!" is equivalent to "the generational trauma never dies!" Miyagi-Do, from the original movies, represents healing from generational cycles. The franchise now celebrates what it once cautioned against. Johnny never grew nor self-actualized, never took accountability with Robby nor Daniel, proudly reopened Cobra Kai, and continued to teach unnecessary aggression and no mercy. In The Karate Kid, Johnny had a redemptive moment in the end. In Cobra Kai, Johnny ended as a child abandoner and abuser who never attempted to redeem himself properly.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">Johnny's False Redemption — Part 3: Johnny replacing the family he failed is also celebrated</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>Johnny and Miguel's "father-son dynamic" is called and marketed the "heart" of the series. However, this "heart" has always been at Robby's expense. Robby needed Johnny first and foremost, but Johnny was the one who'd failed and abandoned his son. Disturbingly, Robby was framed as the problem in their relationship due to his trauma from abandonment and later replacement with Miguel.</p>
+        <p>In Season 3, Robby told Johnny, "You chose Miguel over me again." These words were purposely drowned out. The series-long storyline of Johnny choosing Miguel over Robby was never resolved — or more precisely, the resolution was Robby having to accept that he will always be Johnny's lowest priority.</p>
+        <p>In Season 6 Part 3, the family replacement was completely solidified. Rosa shamed Johnny that his new daughter should not be a bastard, prompting his marriage to Carmen. This did not redeem Johnny for what he had done to Robby and Shannon. Johnny marrying another woman after getting her pregnant and being there for their child's birth is not how redemption works.</p>
+        <p>After the wedding and the baby's birth, Robby was quickly injured and sidelined. Miguel was placed into a dead kid's spot to be used as Johnny's championship-winning "son." Shannon was replaced in the stands with Carmen. Shannon was never seen again after Robby's injury. The family replacement was completed.</p>
+        <p>The franchise champions a father who escaped accountability and only chased after erasing his past failures (the Cobra Kai way) instead of taking accountability and making amends (the Miyagi-Do way). The message is: "If you have failed your child, you don't need to take accountability. Just get new children and do things right with them." Instead of giving Johnny a genuine redemption, Johnny's failures were made worse and covered up with a sham redemption.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">A Note About Johnny and Robby — From a Fan</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>"As a Cobra Kai fan, I've enjoyed the world you've created since the first episode. One character I hold especially dear is Robby Keene. From his first appearance, I saw striking similarities between us: both of us have had an on-again, off-again absentee father who loves classic rock, has his vices, and isn't exactly a stable figure. Like Robby, I've also felt cast aside, especially when it comes to a father's love and attention.</p>
+        <p>I connected deeply with Robby's struggles and wanted him to find happiness, especially by rebuilding his bond with Johnny. But with all due respect, I don't believe this bond was earned. Johnny's lack of effort, combined with Miguel being prioritized, left Robby feeling like an afterthought. Johnny barely grew as a father and instead made Robby feel guilty for not accepting the minimal effort he offered.</p>
+        <p>Robby did not deserve the treatment he received in the show. He was failed, both by Johnny and by the story. What should have been a gradual, meaningful progression of his bond with Johnny was rushed and undermined by Johnny's lack of true effort. Robby's character deserved better — he deserved a father who truly put him first and a future that reflected his worth."</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">Robby &amp; Miguel — Part 1: "Showing mercy" has been distorted and enables violence</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>Johnny's lesson, "strike first, strike hard, show mercy sometimes," teaches that a person can hurt someone freely, as long as they apologize or stop once their anger has subsided. In Season 2, Miguel applied this lesson in the school fight against Robby. Robby's defensive fight response led to Miguel's accidental injury. Afterward, Miguel blamed Johnny for his injury because he had "shown mercy" — yet Miguel never regretted his violent actions such as initiating attacks on Robby, choking him, and kicking him into the railing.</p>
+        <p>In Season 5 Episode 5, Johnny forced the boys to fight and become friends. Miguel struck first and aggressively, while Robby was more defensive. Flashbacks were used to show Miguel's perspective of the school fight — moments where Robby had been defending himself. Miguel eventually stopped, which was described as "the mercy he's been shown." This apartment fight, which was abusive to Robby, was marketed as a "therapy session" for the boys. Abuse is not a therapy session.</p>
+        <p>When Robby asked why he didn't hold back during the school fight, he sincerely acknowledged it was the worst moment of both their lives. However, Robby received no apology or acknowledgment for what Miguel had done to him before or during that fight. Miguel never redeemed himself. He simply repeated the school fight pattern: chose a fight with Robby, struck first, struck hard, and "showed mercy" after getting his anger out.</p>
+        <p>This new take on "showing mercy" goes against the foundation of the franchise. In The Karate Kid Part II, the act of showing mercy was portrayed in a healthy way — Mr. Miyagi showed mercy to Kreese during defense, and Daniel showed mercy to Chozen during defense. Both showed mercy in situations of defense. We hope to see the original message restored and the harmful version renounced by the franchise.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">Robby &amp; Miguel — Part 2: Robby was demeaned and scapegoated while Miguel was glorified and escaped accountability</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>Miguel's injury at the end of the school fight was used as a free pass. He is off the hook for all he did to Robby before and after. Many victims in real life experience similar situations — they are villainized when they hurt their abusers as a fight response ("reactive defense"), while their abusers are supported and given free passes.</p>
+        <p>Throughout, Robby's faults were clearly portrayed — sometimes exaggerated or scapegoated. Almost all of Miguel's faults were dismissed. His injury, combined with his entitled behavior of wanting Johnny as a dad and Sam as his girlfriend, were used as his "sob story." Kreese and Robby were the only ones to acknowledge that Miguel had attacked Robby that day in school.</p>
+        <p>Another double standard is that Miguel's need for Johnny at Robby's expense is framed as sympathetic, while Robby's need for Johnny — his actual dad — to prioritize him is framed as unreasonable. No child should have to suffer or feel unreasonable because they need their parents to prioritize them. There are many children who experience what Robby has — being replaced. Their side of the story could have been explored through Robby's story. Instead, they were sent the message that their side doesn't matter and they should also "adapt."</p>
+        <p>In Season 6, Robby experienced the greatest narrative disservice — sidelined with a third devastating loss so he could cheer on his abusers as they got the big wins again at his expense. Miguel took over a dead kid's spot — a place he hadn't rightfully earned. The underdog in karate and life, Robby (who had no stable adult support and was even homeless at times), had been replaced in the tournament by the overdog, Miguel (who always had a loving family and home), because "most people want the poorer kid to win."</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">Robby &amp; Tory: Robby's traumas and feelings are not given importance; their unhealthy relationship is skewed to favor Tory</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>Robby and Tory's pairing may seem natural due to their difficult childhoods, but their similarities largely end there. Tory's trauma often manifests as outward aggression or emotional withdrawal, while Robby tends to internalize his trauma. Their relationship was never healthy to begin with.</p>
+        <p>In Season 3, Tory framed herself as a victim of scapegoating like Robby was — but Tory was not scapegoated. She had chosen to attack Sam because Miguel had cheated on her. Robby had also been cheated on, but he had tried to protect Sam and had been attacked by Miguel. The framing that Robby and Tory are in similar situations minimized Robby's actual scapegoating.</p>
+        <p>In Season 6, their dysfunction worsened. Tory kept Robby in a limbo status by putting them on a "pause" as she focused on the tournament — claiming this was best for both of them, when in reality it benefitted herself. Robby has an unhealthy codependency with her: he could not focus properly until Tory arrived to support him, yet she performed well in her own matches without his support.</p>
+        <p>Robby's encounter with Zara in Season 6 Episode 8 is objectively depicted as a sexual assault on his person. He was drunk for the first time and clearly impaired, while Zara was sober. He woke up disoriented with signs of a sexual encounter he didn't remember. The encounter was framed as him "cheating" and at fault. Criticism raised by fans — including sexual assault survivors — was ignored. The day following the fan outcry, the encounter was marketed as an "omg can Tory catch a break" moment, erasing Robby's experience as a sexual assault survivor.</p>
+        <p>Robby wasn't allowed to self-actualize as an individual and was left in a relationship in which he gives far more than he receives. This sends a dangerous message to youth that codependent relationships are healthy — that one should ignore their own self-respect and self-worth to selflessly support a partner who is not supportive in return.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">The Tragedy of Robby's Story</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>Of all the character stories in the series, Robby's story is the most tragic and harmful. He is depicted as a teen with poor mental health and childhood (complex) trauma from years of abandonment and neglect. He didn't want to end up like his father; he wanted to break the cycle of trauma. He had different traumatic experiences throughout his story, and his mental health worsened. He had the lowest self-worth of all the teens.</p>
+        <p>Robby had many distinctive Karate Kid parallels with Daniel, a prominent one being the locker room scene after Axel injured him. Robby was the underdog and Karate Kid in this story. When the time came for Robby's self-actualization, it never happened. Instead, Robby settled with unfulfilling, unhealthy relationships and the belief that he will never win — both of which no one, especially a trauma victim with low self-worth, should settle with.</p>
+        <p>Immediately following Robby's injury, Johnny spearheaded Cobra Kai's return, put Miguel in the dead captain's spot, and insisted that Johnny himself needed to win. Robby was shown hobbling around on crutches, "adapting" once more, supporting Cobra Kai — the generational trauma he had wanted to end — and donning a Cobra Kai gi himself.</p>
+        <p>Robby's consolation was a last-minute sponsorship not due to his own meritorious win as a fighter but as the female champion's karate boyfriend. Throwing an afterthought contract at Robby, after belittling his character so, debased his entire journey. Material wins do not heal trauma, unhealthy relationships, or poor mental health.</p>
+        <p>No one in Robby's situation should "adapt" and support those who harm them and their mental health, and who get all the wins at their expense. No one with poor mental health should give up fighting for themselves and for their own meritorious wins. Despite all his efforts to be a better person and trying to heal his trauma, Robby was still given losses in all of his relationships and in all of the tournaments.</p>
+        <p>Childhood trauma survivors and cycle breakers — true underdogs like Robby — deserve their due respect and representation in The Karate Kid franchise. As another Sony franchise says, "With great power comes great responsibility." Please use it wisely and respectfully. Please do better.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">Sam &amp; Miguel: Framing their relationship as healthy normalizes aggressive, entitled behavior by partners</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>Throughout the series, Miguel and Sam's relationship was unhealthy, primarily from Miguel's side. Miguel had a recurring tendency to gaslight Sam, particularly about Robby and Tory. He believed he was entitled to dictate who Sam hung out with, reduced her trauma due to Tory to just "karate," and blamed her for things that were his own doing.</p>
+        <p>Miguel also guilted Sam about Tory repeatedly, minimizing Sam's legitimate trauma. He blamed Sam when he didn't even have context for situations. In Season 6 Part 1, Miguel insisted that Sam be friends with Tory, which Sam did not have to be and shouldn't have even been asked to be — he essentially wanted to control Sam's relationship with Tory.</p>
+        <p>Miguel's injury gave him a free pass in their relationship too. Sam had in fact witnessed Miguel attacking Robby that day in school, but all was later forgotten. Miguel's impulsive violence was a major factor in Sam's trauma that she carried for the remainder of the series. Miguel didn't respect Sam's boundaries and acted entitled to her — showing up at her house uninvited, calling and texting incessantly, and stealing Aisha's phone to do so.</p>
+        <p>He also approached her while she was drunk and eventually kissed her. Sam was heavily intoxicated. Nobody who is drunk to that degree can give genuine consent. During the school fight, Robby called Miguel out for taking advantage of Sam, but the injury gave Miguel a free pass for this as well. Worse, Sam received the majority of the blame, even being slut-shamed by adults — a realistic double standard that was not framed as negative or unfair within the show.</p>
+        <p>Sam was not able to get out of her unhealthy relationship with Miguel. Part of her self-actualization should have been leaving this relationship. Instead, like with the other Miyagi-Do characters, Sam was made to stay in this unhealthy dynamic and simply be a support for Miguel while he got all of his wins. The romanticization of this pairing sends the message to youth that they should accept such unhealthy behavior from their partners.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">Sam &amp; Tory: Sam's privilege and Tory's difficult life were used to frame Tory as entitled in her behavior and more deserving of the big win</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>Although their rivalry started on equal footing, Tory escalated to assaulting Sam in school and then in her own home. Tory's home life was always used to frame her as sympathetic and entitled in her unnecessary violent actions against Sam.</p>
+        <p>Sam's traumas were minimized throughout. Miguel repeatedly used Tory's home life to convince Sam to understand Tory's side of the story. Such behavior towards trauma victims is unfortunately quite common in society. Abusers and bullies are enabled due to having sympathetic backgrounds, while trauma survivors are told to feel sorry for them and forgive them — thus being told that their experiences do not matter.</p>
+        <p>Sam setting boundaries with Tory was framed as Sam being unnecessarily mean — a bully — to Tory. Sam's traumas were minimized further in Season 6. Their resolution was in poor taste: Tory refused to take accountability until Sam took accountability too, despite Sam's offenses being nowhere near the same level. On top of this, Sam consoled Tory as she cried, downplaying the severity of the physical and emotional scars Tory left her with.</p>
+        <p>It is incredibly demeaning and damaging to send the message that a survivor of abuse not only has to be the "bigger person" but has to console their abuser. After the world tournament resumed, Sam convinced Tory to compete as Cobra Kai, only to quit later — conveniently being removed as an obstacle to Tory's win. Sam was the true Karate Kid between them. Tory's trauma does not make her more deserving of wins, nor does it excuse treating others poorly.</p>
+        <p>It should be noted that Tory's brother was inconsequential to the narrative in Season 6 when Tory later traveled to the world tournament and became a social media influencer. The gravity of Tory's situation with her brother was only used to enable Tory and demean Sam in Season 4 — another example of a serious situation being used to minimize a trauma survivor and enable their abuser, then trivialized or forgotten altogether.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span class="trigger-title">Kreese's False Redemption: Kreese successfully continued the cycle of trauma through Johnny, while gaining a "heroic" end by attempting to kill the villain he himself had created</span>
+        <svg class="trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+      <div class="accordion-panel">
+        <p>Kreese's redemption is another farce. Kreese took accountability with Johnny, which was more than Johnny did for his redemption with Robby. However, the "evil" sensei had not learned from his past mistakes, most recently Kwon's death. Kreese decided to continue the cycle of trauma by giving Cobra Kai back to Johnny, instead of encouraging his former pupil to choose a better way — Miyagi-Do.</p>
+        <p>Kwon's death was minimized not only by Kreese and Johnny continuing the cycle of trauma through Cobra Kai, but also by Miguel stepping into Kwon's spot for his undeserved win.</p>
+        <p>Kreese's big "redemptive" moment involved killing, or at least attempting to kill Silver (and Dennis). Attempted murder, especially in this situation, is not redemptive. Moreover, Silver had tried to turn his life around before Kreese came back into it. Kreese later manipulated Silver, using his PTSD triggers, to try to control him. After Silver turned on Kreese, he was framed as the greater "villain" between the two.</p>
+        <p>While Daniel's victory over Silver in Season 5 felt justified and cathartic, the irony remains that Silver was also a victim of Kreese's. Daniel's cathartic win over Silver was essentially nullified in Season 6 Part 3 after Daniel proudly said to Silver "Cobra Kai never dies," donned a Cobra Kai gi, and spouted Kreese's teachings to Johnny.</p>
+      </div>
+    </div>
+
+  </div><!-- /accordion -->
+
+</div><!-- /page-wrap -->
+
+<footer>
+  <p class="footer-channel">Limitless Meaning</p>
+  <p>Media commentary &amp; analysis &nbsp;·&nbsp; <a href="https://www.youtube.com/@LimitlessMeaning" target="_blank" rel="noopener">YouTube Channel ↗</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.accordion-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.accordion-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open', !isOpen);
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+</script>
+
+</body>
+</html>
