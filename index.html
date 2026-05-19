@@ -4,92 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Open Letter — Cobra Kai & The Karate Kid Franchise</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #1a1510;
-      --ink-soft: #3d3530;
-      --ink-muted: #7a6e66;
-      --paper: #f5f0e8;
-      --paper-warm: #ede7d9;
-      --rule: #c8bfb0;
-      --accent: #8b2020;
-      --accent-light: #c04040;
-      --gold: #b8952a;
+      --ink: #1a1a1a;
+      --ink-soft: #333333;
+      --ink-muted: #666666;
+      --bg: #ffffff;
+      --bg-soft: #f7f7f7;
+      --rule: #e0e0e0;
+      --accent: #1a3a6b;
+      --accent-hover: #2a5298;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background-color: var(--paper);
+      background-color: var(--bg);
       color: var(--ink);
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 18px;
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-size: 17px;
       line-height: 1.75;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     /* ── HEADER ── */
     header {
-      background-color: var(--ink);
-      color: var(--paper);
+      background-color: var(--accent);
+      color: #ffffff;
       padding: 3rem 2rem 2.5rem;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 39px,
-        rgba(255,255,255,0.03) 39px,
-        rgba(255,255,255,0.03) 40px
-      );
-      pointer-events: none;
     }
 
     .header-eyebrow {
-      font-family: 'Source Serif 4', serif;
       font-size: 0.72rem;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.2rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1rem;
+      font-weight: 400;
     }
 
     header h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.9rem, 5vw, 3.2rem);
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--paper);
-      max-width: 800px;
-      margin: 0 auto 1rem;
-    }
-
-    header h1 em {
-      font-style: italic;
-      color: #d4c4b0;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.3;
+      color: #ffffff;
+      max-width: 780px;
+      margin: 0 auto 0.8rem;
     }
 
     .header-sub {
-      font-size: 0.9rem;
-      color: #a09080;
-      letter-spacing: 0.05em;
-    }
-
-    .header-rule {
-      width: 60px;
-      height: 2px;
-      background: var(--gold);
-      margin: 1.5rem auto 0;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
     /* ── LAYOUT ── */
@@ -101,14 +73,10 @@
 
     /* ── ADDRESSEE ── */
     .addressee {
-      margin: 3.5rem 0 0;
-      padding: 2rem 2.5rem;
-      background: var(--paper-warm);
-      border-left: 3px solid var(--accent);
+      margin: 3rem 0 0;
       font-size: 0.95rem;
-      font-style: italic;
       color: var(--ink-soft);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     /* ── LETTER BODY ── */
@@ -122,41 +90,29 @@
     }
 
     .letter-body ul {
-      margin: 1rem 0 1.8rem 0;
-      padding-left: 0;
-      list-style: none;
+      margin: 1rem 0 1.8rem 1.4rem;
+      list-style: disc;
     }
 
     .letter-body ul li {
-      position: relative;
-      padding-left: 1.6rem;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       color: var(--ink-soft);
-      font-size: 0.97rem;
-    }
-
-    .letter-body ul li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 600;
+      font-size: 0.96rem;
     }
 
     blockquote {
       margin: 2rem 0;
       padding: 1.2rem 1.8rem;
-      border-left: 3px solid var(--gold);
-      background: rgba(184, 149, 42, 0.06);
+      border-left: 3px solid var(--accent);
+      background: var(--bg-soft);
       font-style: italic;
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--ink-soft);
     }
 
     .signoff {
-      margin: 2.5rem 0 3.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--rule);
+      margin: 2.5rem 0 3rem;
+      padding-top: 0;
     }
 
     .signoff p {
@@ -169,32 +125,30 @@
       font-style: normal;
       font-weight: 600;
       color: var(--ink);
-      font-size: 1.05rem;
     }
 
     /* ── SECTION DIVIDER ── */
     .section-intro {
       margin: 0 0 1.5rem;
       padding: 2rem 0 1rem;
-      border-top: 2px solid var(--ink);
+      border-top: 1px solid var(--rule);
+    }
+
+    .explanations-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
     }
 
     .section-intro p {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--ink-muted);
-      font-style: italic;
     }
 
     /* ── ACCORDION ── */
-    .explanations-label {
-      font-family: 'Source Serif 4', serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      margin-bottom: 1rem;
-    }
-
     .accordion {
       margin-bottom: 4rem;
     }
@@ -212,7 +166,7 @@
       background: none;
       border: none;
       cursor: pointer;
-      padding: 1.3rem 0;
+      padding: 1.2rem 0;
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -221,22 +175,21 @@
     }
 
     .accordion-trigger:hover .trigger-title {
-      color: var(--accent-light);
+      color: var(--accent-hover);
     }
 
     .trigger-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.05rem;
+      font-size: 0.97rem;
       font-weight: 600;
       color: var(--ink);
-      line-height: 1.35;
+      line-height: 1.4;
       transition: color 0.2s;
     }
 
     .trigger-icon {
       flex-shrink: 0;
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       margin-top: 2px;
       color: var(--accent);
       transition: transform 0.3s ease;
@@ -248,7 +201,7 @@
 
     .accordion-panel {
       display: none;
-      padding: 0 0 1.8rem;
+      padding: 0 0 1.6rem;
     }
 
     .accordion-item.open .accordion-panel {
@@ -257,8 +210,8 @@
 
     .accordion-panel p {
       color: var(--ink-soft);
-      margin-bottom: 1.2rem;
-      font-size: 0.97rem;
+      margin-bottom: 1.1rem;
+      font-size: 0.95rem;
     }
 
     .accordion-panel p:last-child {
@@ -266,84 +219,51 @@
     }
 
     .accordion-panel ul {
-      margin: 0.8rem 0 1.2rem;
-      padding-left: 0;
-      list-style: none;
+      margin: 0.8rem 0 1.2rem 1.4rem;
+      list-style: disc;
     }
 
     .accordion-panel ul li {
-      position: relative;
-      padding-left: 1.4rem;
-      margin-bottom: 0.55rem;
-      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.94rem;
       color: var(--ink-soft);
-    }
-
-    .accordion-panel ul li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
     }
 
     .accordion-panel blockquote {
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       margin: 1.2rem 0;
-    }
-
-    .fan-note {
-      background: var(--paper-warm);
-      border-left: 3px solid var(--gold);
-      padding: 1.4rem 1.6rem;
-      margin: 1.2rem 0;
-      font-style: italic;
-      font-size: 0.93rem;
-      color: var(--ink-soft);
     }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--ink);
-      color: #9a8e84;
+      background: var(--bg-soft);
+      border-top: 1px solid var(--rule);
+      color: var(--ink-muted);
       text-align: center;
-      padding: 2.5rem 1.5rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.04em;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
     }
 
     footer a {
-      color: var(--gold);
+      color: var(--accent);
       text-decoration: none;
+      font-weight: 600;
     }
 
     footer a:hover { text-decoration: underline; }
 
     .footer-channel {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      color: var(--paper);
-      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
     }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    header h1, .header-eyebrow, .header-sub {
-      animation: fadeUp 0.7s ease both;
-    }
-
-    .header-eyebrow { animation-delay: 0.1s; }
-    header h1       { animation-delay: 0.25s; }
-    .header-sub     { animation-delay: 0.4s; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       body { font-size: 16px; }
-      .addressee { padding: 1.4rem 1.5rem; }
-      .trigger-title { font-size: 0.97rem; }
+      .addressee { padding: 1.2rem 1.4rem; }
+      .trigger-title { font-size: 0.93rem; }
     }
   </style>
 </head>
@@ -352,14 +272,11 @@
 <header>
   <h1>On the Harmful Messages of <em>Cobra Kai</em><br>and The Karate Kid Franchise</h1>
   <p class="header-eyebrow">An Open Letter from Concerned Fans</p>
-  <div class="header-rule"></div>
 </header>
 
 <div class="page-wrap">
 
-  <div class="addressee">
-    To the Executive Producers and Producers of Cobra Kai, and the Executives at Overbrook Entertainment, Sony Pictures Television, and Netflix:
-  </div>
+  <p class="addressee">To the Executive Producers and Producers of Cobra Kai, and the Executives at Overbrook Entertainment, Sony Pictures Television, and Netflix:</p>
 
   <div class="letter-body">
 
@@ -390,11 +307,7 @@
 
     <p>Also, self-actualization is a key aspect of an underdog story, which The Karate Kid franchise used to promote but no longer does. Self-actualization is also important for trauma healing. The franchise now promotes that trauma survivors should not self-actualize but should stop fighting for themselves and should selflessly support their abusers and bullies, that they should settle for unhealthy relationships and the belief that they should stop trying for wins. These are harmful messages to send to and about trauma victims and cycle breakers.</p>
 
-    <blockquote>
-      "Win, lose, no matter. You make good fight, earn respect. Then nobody bother." — Mr. Miyagi
-    </blockquote>
-
-    <p>This is an important lesson that one needs in life, including in unhealthy relationships. Daniel was right to continue his fight and self-actualize in the climax of The Karate Kid. In turn, Robby and Sam should have also continued their fights and self-actualized in Season 6 Part 3. They are both important representations of teens who have experienced traumas due to abusers and bullies. They should have not only finished their final fights, but also stood up for themselves and stood firm against their abusers and bullies. In Robby's case, these were primarily Johnny and Miguel. In Sam's case, these were primarily Miguel and Tory. The framing that makes Johnny, Miguel, and Tory seem sympathetic, justified, and entitled to wins, as well as the framing that vilifies Daniel, Robby, and Sam and minimizes their traumas play a significant role in the harmful messages. The series demeans trauma survivors instead of promoting empathy and understanding towards them.</p>
+    <p>Miyagi-Do teaches: "Win, lose, no matter. You make good fight, earn respect. Then nobody bother." This is an important lesson that one needs in life, including in unhealthy relationships. Daniel was right to continue his fight and self-actualize in the climax of The Karate Kid. In turn, Robby and Sam should have also continued their fights and self-actualized in Season 6 Part 3. They are both important representations of teens who have experienced traumas due to abusers and bullies. They should have not only finished their final fights, but also stood up for themselves and stood firm against their abusers and bullies. In Robby's case, these were primarily Johnny and Miguel. In Sam's case, these were primarily Miguel and Tory. The framing that makes Johnny, Miguel, and Tory seem sympathetic, justified, and entitled to wins, as well as the framing that vilifies Daniel, Robby, and Sam and minimizes their traumas play a significant role in the harmful messages. The series demeans trauma survivors instead of promoting empathy and understanding towards them.</p>
 
     <p>Please find below explanations of our concerns based on details from the series.</p>
 
@@ -404,7 +317,7 @@
 
     <div class="signoff">
       <p>Sincerely,</p>
-      Concerned fans of The Karate Kid franchise
+      <p>Concerned fans of The Karate Kid franchise</p>
     </div>
 
   </div><!-- /letter-body -->
